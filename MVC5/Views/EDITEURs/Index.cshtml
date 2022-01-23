@@ -1,0 +1,156 @@
+﻿@model IEnumerable<MVC5.EDITEUR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("rech")
+
+    <input type="submit" value="chercher" />
+
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMED)
+        </th>
+        <th>
+            Adresse
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VILLEED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELED)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADRED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VILLEED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TELED)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.NOMED }) |
+                @Html.ActionLink("Details", "Details", new { id = item.NOMED }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.NOMED })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+@using (Html.BeginForm(new { Controller = "EDITEURs", Action = "Action1" }))
+{
+    <p>
+        @Html.TextBox("a")
+        @Html.TextBox("b")
+        <input type="submit" value="addition" class="btn btn-success" />
+
+    </p>
+}
+
+
+<p>
+    @Html.TextBox("x")
+    @Html.TextBox("y")
+    <input type="button" value="addition" id="btnCalculer" class="btn btn-danger" />
+
+</p>
+
+<span id="resultat"></span>
+
+<p>
+    @Html.TextBox("id")
+
+    <input type="button" value="Chercher" id="btnChercher" class="btn btn-primary" />
+
+</p>
+
+<span id="unEditeur"></span>
+
+
+
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+
+            $("#btnCalculer").click(function () {
+
+                var x = $("#x").val();
+                var y = $("#y").val();
+                $.ajax({
+                    url: "/EDITEURs/calculer",
+                    method: "post",
+                    async: false,
+                    data: { x: x, y: y },
+                    success: function (data) {
+                        $("#resultat").html(data);
+                    }
+                });
+
+            });
+
+
+            $("#btnChercher").click(function () {
+
+                var id = $("#id").val();
+              
+                $.ajax({
+                    url: "/EDITEURs/chercher",
+                    method: "post",
+                    async: false,
+                    data: { id: id},
+                    success: function (data) {
+                        $("#unEditeur").html(data);
+                    }
+                });
+
+            });
+
+
+        });
+
+    </script>
+
+
+}
+
+
+
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVC5.DEPOT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMDEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADRDEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPDEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VILLEDEP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMDEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADRDEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPDEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VILLEDEP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NUMDEP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NUMDEP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NUMDEP })
+        </td>
+    </tr>
+}
+
+</table>

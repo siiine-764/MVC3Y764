@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="librairieModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATALOGUE">
+    <Key>
+      <PropertyRef Name="DATEDEB" />
+    </Key>
+    <Property Name="DATEDEB" Type="date" Nullable="false" />
+    <Property Name="DATEFIN" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLASSIFICATION">
+    <Key>
+      <PropertyRef Name="NUMRUB" />
+    </Key>
+    <Property Name="NUMRUB" Type="int" Nullable="false" />
+    <Property Name="LIBRUB" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DEPOT">
+    <Key>
+      <PropertyRef Name="NUMDEP" />
+    </Key>
+    <Property Name="NUMDEP" Type="int" Nullable="false" />
+    <Property Name="NOMDEP" Type="varchar" MaxLength="30" />
+    <Property Name="ADRDEP" Type="varchar" MaxLength="40" />
+    <Property Name="CPDEP" Type="varchar" MaxLength="5" />
+    <Property Name="VILLEDEP" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.ecr2' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ecr2">
+    <Key>
+      <PropertyRef Name="NUMECR" />
+    </Key>
+    <Property Name="NUMECR" Type="int" Nullable="false" />
+    <Property Name="PRENOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="NOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="PAYSECR" Type="varchar" MaxLength="30" />
+    <Property Name="LANGUECR" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.ecr3' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ecr3">
+    <Key>
+      <PropertyRef Name="NUMECR" />
+    </Key>
+    <Property Name="NUMECR" Type="int" Nullable="false" />
+    <Property Name="PRENOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="NOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="PAYSECR" Type="varchar" MaxLength="30" />
+    <Property Name="LANGUECR" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.ecr8' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ecr8">
+    <Key>
+      <PropertyRef Name="NUMECR" />
+    </Key>
+    <Property Name="NUMECR" Type="int" Nullable="false" />
+    <Property Name="PRENOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="NOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="PAYSECR" Type="varchar" MaxLength="30" />
+    <Property Name="LANGUECR" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.ecr9' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ecr9">
+    <Key>
+      <PropertyRef Name="NUMECR" />
+    </Key>
+    <Property Name="NUMECR" Type="int" Nullable="false" />
+    <Property Name="PRENOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="NOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="PAYSECR" Type="varchar" MaxLength="30" />
+    <Property Name="LANGUECR" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="ECRIRE">
+    <Key>
+      <PropertyRef Name="NUMOUVR" />
+      <PropertyRef Name="NUMECR" />
+    </Key>
+    <Property Name="NUMOUVR" Type="int" Nullable="false" />
+    <Property Name="NUMECR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ECRIVAIN">
+    <Key>
+      <PropertyRef Name="NUMECR" />
+    </Key>
+    <Property Name="NUMECR" Type="int" Nullable="false" />
+    <Property Name="PRENOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="NOMECR" Type="varchar" MaxLength="30" />
+    <Property Name="PAYSECR" Type="varchar" MaxLength="30" />
+    <Property Name="LANGUECR" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="EDITEUR">
+    <Key>
+      <PropertyRef Name="NOMED" />
+    </Key>
+    <Property Name="NOMED" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ADRED" Type="varchar" MaxLength="40" />
+    <Property Name="CPED" Type="nvarchar" MaxLength="5" />
+    <Property Name="VILLEED" Type="nvarchar" MaxLength="30" />
+    <Property Name="TELED" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.EditeursDeParis' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="EditeursDeParis">
+    <Key>
+      <PropertyRef Name="nomed" />
+    </Key>
+    <Property Name="nomed" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="teled" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.edParis' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="edParis">
+    <Key>
+      <PropertyRef Name="nomed" />
+    </Key>
+    <Property Name="nomed" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="teled" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="OUVRAGE">
+    <Key>
+      <PropertyRef Name="NUMOUVR" />
+    </Key>
+    <Property Name="NUMOUVR" Type="int" Nullable="false" />
+    <Property Name="NOMOUVR" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="ANNEEPARU" Type="smallint" />
+    <Property Name="NUMRUB" Type="int" />
+    <Property Name="NOMED" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'librairie.dbo.ParisEditors' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ParisEditors">
+    <Key>
+      <PropertyRef Name="nomed" />
+    </Key>
+    <Property Name="nomed" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="teled" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="STOCKER">
+    <Key>
+      <PropertyRef Name="NUMOUVR" />
+      <PropertyRef Name="NUMDEP" />
+    </Key>
+    <Property Name="NUMOUVR" Type="int" Nullable="false" />
+    <Property Name="NUMDEP" Type="int" Nullable="false" />
+    <Property Name="QTESTOCK" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TARIFER">
+    <Key>
+      <PropertyRef Name="NUMOUVR" />
+      <PropertyRef Name="DATEDEB" />
+    </Key>
+    <Property Name="NUMOUVR" Type="int" Nullable="false" />
+    <Property Name="DATEDEB" Type="date" Nullable="false" />
+    <Property Name="PRIXVENTE" Type="float" />
+  </EntityType>
+  <EntityType Name="utilisateur">
+    <Key>
+      <PropertyRef Name="login" />
+    </Key>
+    <Property Name="login" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mdp" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="valide" Type="bit" />
+    <Property Name="hash" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ECRIRE_ECRIVAIN">
+    <End Role="ECRIVAIN" Type="Self.ECRIVAIN" Multiplicity="1" />
+    <End Role="ECRIRE" Type="Self.ECRIRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECRIVAIN">
+        <PropertyRef Name="NUMECR" />
+      </Principal>
+      <Dependent Role="ECRIRE">
+        <PropertyRef Name="NUMECR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECRIRE_OUVRAGE">
+    <End Role="OUVRAGE" Type="Self.OUVRAGE" Multiplicity="1" />
+    <End Role="ECRIRE" Type="Self.ECRIRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OUVRAGE">
+        <PropertyRef Name="NUMOUVR" />
+      </Principal>
+      <Dependent Role="ECRIRE">
+        <PropertyRef Name="NUMOUVR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUVRAGE_CLASSIFICATION">
+    <End Role="CLASSIFICATION" Type="Self.CLASSIFICATION" Multiplicity="0..1" />
+    <End Role="OUVRAGE" Type="Self.OUVRAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASSIFICATION">
+        <PropertyRef Name="NUMRUB" />
+      </Principal>
+      <Dependent Role="OUVRAGE">
+        <PropertyRef Name="NUMRUB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUVRAGE_EDITEUR">
+    <End Role="EDITEUR" Type="Self.EDITEUR" Multiplicity="0..1" />
+    <End Role="OUVRAGE" Type="Self.OUVRAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EDITEUR">
+        <PropertyRef Name="NOMED" />
+      </Principal>
+      <Dependent Role="OUVRAGE">
+        <PropertyRef Name="NOMED" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCKER_DEPOT">
+    <End Role="DEPOT" Type="Self.DEPOT" Multiplicity="1" />
+    <End Role="STOCKER" Type="Self.STOCKER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPOT">
+        <PropertyRef Name="NUMDEP" />
+      </Principal>
+      <Dependent Role="STOCKER">
+        <PropertyRef Name="NUMDEP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCKER_OUVRAGE">
+    <End Role="OUVRAGE" Type="Self.OUVRAGE" Multiplicity="1" />
+    <End Role="STOCKER" Type="Self.STOCKER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OUVRAGE">
+        <PropertyRef Name="NUMOUVR" />
+      </Principal>
+      <Dependent Role="STOCKER">
+        <PropertyRef Name="NUMOUVR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TARIFER_CATALOGUE">
+    <End Role="CATALOGUE" Type="Self.CATALOGUE" Multiplicity="1" />
+    <End Role="TARIFER" Type="Self.TARIFER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATALOGUE">
+        <PropertyRef Name="DATEDEB" />
+      </Principal>
+      <Dependent Role="TARIFER">
+        <PropertyRef Name="DATEDEB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TARIFER_OUVRAGE">
+    <End Role="OUVRAGE" Type="Self.OUVRAGE" Multiplicity="1" />
+    <End Role="TARIFER" Type="Self.TARIFER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OUVRAGE">
+        <PropertyRef Name="NUMOUVR" />
+      </Principal>
+      <Dependent Role="TARIFER">
+        <PropertyRef Name="NUMOUVR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="librairieModelStoreContainer">
+    <EntitySet Name="CATALOGUE" EntityType="Self.CATALOGUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLASSIFICATION" EntityType="Self.CLASSIFICATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPOT" EntityType="Self.DEPOT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ECRIRE" EntityType="Self.ECRIRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ECRIVAIN" EntityType="Self.ECRIVAIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDITEUR" EntityType="Self.EDITEUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OUVRAGE" EntityType="Self.OUVRAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STOCKER" EntityType="Self.STOCKER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TARIFER" EntityType="Self.TARIFER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="utilisateur" EntityType="Self.utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ecr2" EntityType="Self.ecr2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ecr2].[NUMECR] AS [NUMECR], 
+    [ecr2].[PRENOMECR] AS [PRENOMECR], 
+    [ecr2].[NOMECR] AS [NOMECR], 
+    [ecr2].[PAYSECR] AS [PAYSECR], 
+    [ecr2].[LANGUECR] AS [LANGUECR]
+    FROM [dbo].[ecr2] AS [ecr2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ecr3" EntityType="Self.ecr3" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ecr3].[NUMECR] AS [NUMECR], 
+    [ecr3].[PRENOMECR] AS [PRENOMECR], 
+    [ecr3].[NOMECR] AS [NOMECR], 
+    [ecr3].[PAYSECR] AS [PAYSECR], 
+    [ecr3].[LANGUECR] AS [LANGUECR]
+    FROM [dbo].[ecr3] AS [ecr3]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ecr8" EntityType="Self.ecr8" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ecr8].[NUMECR] AS [NUMECR], 
+    [ecr8].[PRENOMECR] AS [PRENOMECR], 
+    [ecr8].[NOMECR] AS [NOMECR], 
+    [ecr8].[PAYSECR] AS [PAYSECR], 
+    [ecr8].[LANGUECR] AS [LANGUECR]
+    FROM [dbo].[ecr8] AS [ecr8]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ecr9" EntityType="Self.ecr9" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ecr9].[NUMECR] AS [NUMECR], 
+    [ecr9].[PRENOMECR] AS [PRENOMECR], 
+    [ecr9].[NOMECR] AS [NOMECR], 
+    [ecr9].[PAYSECR] AS [PAYSECR], 
+    [ecr9].[LANGUECR] AS [LANGUECR]
+    FROM [dbo].[ecr9] AS [ecr9]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EditeursDeParis" EntityType="Self.EditeursDeParis" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EditeursDeParis].[nomed] AS [nomed], 
+    [EditeursDeParis].[teled] AS [teled]
+    FROM [dbo].[EditeursDeParis] AS [EditeursDeParis]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="edParis" EntityType="Self.edParis" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [edParis].[nomed] AS [nomed], 
+    [edParis].[teled] AS [teled]
+    FROM [dbo].[edParis] AS [edParis]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ParisEditors" EntityType="Self.ParisEditors" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ParisEditors].[nomed] AS [nomed], 
+    [ParisEditors].[teled] AS [teled]
+    FROM [dbo].[ParisEditors] AS [ParisEditors]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ECRIRE_ECRIVAIN" Association="Self.FK_ECRIRE_ECRIVAIN">
+      <End Role="ECRIVAIN" EntitySet="ECRIVAIN" />
+      <End Role="ECRIRE" EntitySet="ECRIRE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECRIRE_OUVRAGE" Association="Self.FK_ECRIRE_OUVRAGE">
+      <End Role="OUVRAGE" EntitySet="OUVRAGE" />
+      <End Role="ECRIRE" EntitySet="ECRIRE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUVRAGE_CLASSIFICATION" Association="Self.FK_OUVRAGE_CLASSIFICATION">
+      <End Role="CLASSIFICATION" EntitySet="CLASSIFICATION" />
+      <End Role="OUVRAGE" EntitySet="OUVRAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUVRAGE_EDITEUR" Association="Self.FK_OUVRAGE_EDITEUR">
+      <End Role="EDITEUR" EntitySet="EDITEUR" />
+      <End Role="OUVRAGE" EntitySet="OUVRAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCKER_DEPOT" Association="Self.FK_STOCKER_DEPOT">
+      <End Role="DEPOT" EntitySet="DEPOT" />
+      <End Role="STOCKER" EntitySet="STOCKER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCKER_OUVRAGE" Association="Self.FK_STOCKER_OUVRAGE">
+      <End Role="OUVRAGE" EntitySet="OUVRAGE" />
+      <End Role="STOCKER" EntitySet="STOCKER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TARIFER_CATALOGUE" Association="Self.FK_TARIFER_CATALOGUE">
+      <End Role="CATALOGUE" EntitySet="CATALOGUE" />
+      <End Role="TARIFER" EntitySet="TARIFER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TARIFER_OUVRAGE" Association="Self.FK_TARIFER_OUVRAGE">
+      <End Role="OUVRAGE" EntitySet="OUVRAGE" />
+      <End Role="TARIFER" EntitySet="TARIFER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

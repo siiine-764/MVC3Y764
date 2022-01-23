@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="librairieModelStoreContainer" CdmEntityContainer="librairieEntities">
+    <EntitySetMapping Name="CATALOGUE">
+      <EntityTypeMapping TypeName="librairieModel.CATALOGUE">
+        <MappingFragment StoreEntitySet="CATALOGUE">
+          <ScalarProperty Name="DATEDEB" ColumnName="DATEDEB" />
+          <ScalarProperty Name="DATEFIN" ColumnName="DATEFIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLASSIFICATION">
+      <EntityTypeMapping TypeName="librairieModel.CLASSIFICATION">
+        <MappingFragment StoreEntitySet="CLASSIFICATION">
+          <ScalarProperty Name="NUMRUB" ColumnName="NUMRUB" />
+          <ScalarProperty Name="LIBRUB" ColumnName="LIBRUB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPOT">
+      <EntityTypeMapping TypeName="librairieModel.DEPOT">
+        <MappingFragment StoreEntitySet="DEPOT">
+          <ScalarProperty Name="NUMDEP" ColumnName="NUMDEP" />
+          <ScalarProperty Name="NOMDEP" ColumnName="NOMDEP" />
+          <ScalarProperty Name="ADRDEP" ColumnName="ADRDEP" />
+          <ScalarProperty Name="CPDEP" ColumnName="CPDEP" />
+          <ScalarProperty Name="VILLEDEP" ColumnName="VILLEDEP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECRIVAIN">
+      <EntityTypeMapping TypeName="librairieModel.ECRIVAIN">
+        <MappingFragment StoreEntitySet="ECRIVAIN">
+          <ScalarProperty Name="NUMECR" ColumnName="NUMECR" />
+          <ScalarProperty Name="PRENOMECR" ColumnName="PRENOMECR" />
+          <ScalarProperty Name="NOMECR" ColumnName="NOMECR" />
+          <ScalarProperty Name="PAYSECR" ColumnName="PAYSECR" />
+          <ScalarProperty Name="LANGUECR" ColumnName="LANGUECR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EDITEUR">
+      <EntityTypeMapping TypeName="librairieModel.EDITEUR">
+        <MappingFragment StoreEntitySet="EDITEUR">
+          <ScalarProperty Name="NOMED" ColumnName="NOMED" />
+          <ScalarProperty Name="ADRED" ColumnName="ADRED" />
+          <ScalarProperty Name="CPED" ColumnName="CPED" />
+          <ScalarProperty Name="VILLEED" ColumnName="VILLEED" />
+          <ScalarProperty Name="TELED" ColumnName="TELED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OUVRAGE">
+      <EntityTypeMapping TypeName="librairieModel.OUVRAGE">
+        <MappingFragment StoreEntitySet="OUVRAGE">
+          <ScalarProperty Name="NUMOUVR" ColumnName="NUMOUVR" />
+          <ScalarProperty Name="NOMOUVR" ColumnName="NOMOUVR" />
+          <ScalarProperty Name="ANNEEPARU" ColumnName="ANNEEPARU" />
+          <ScalarProperty Name="NUMRUB" ColumnName="NUMRUB" />
+          <ScalarProperty Name="NOMED" ColumnName="NOMED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCKER">
+      <EntityTypeMapping TypeName="librairieModel.STOCKER">
+        <MappingFragment StoreEntitySet="STOCKER">
+          <ScalarProperty Name="NUMOUVR" ColumnName="NUMOUVR" />
+          <ScalarProperty Name="NUMDEP" ColumnName="NUMDEP" />
+          <ScalarProperty Name="QTESTOCK" ColumnName="QTESTOCK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="librairieModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TARIFER">
+      <EntityTypeMapping TypeName="librairieModel.TARIFER">
+        <MappingFragment StoreEntitySet="TARIFER">
+          <ScalarProperty Name="NUMOUVR" ColumnName="NUMOUVR" />
+          <ScalarProperty Name="DATEDEB" ColumnName="DATEDEB" />
+          <ScalarProperty Name="PRIXVENTE" ColumnName="PRIXVENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="utilisateur">
+      <EntityTypeMapping TypeName="librairieModel.utilisateur">
+        <MappingFragment StoreEntitySet="utilisateur">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="mdp" ColumnName="mdp" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="valide" ColumnName="valide" />
+          <ScalarProperty Name="hash" ColumnName="hash" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ecr2">
+      <EntityTypeMapping TypeName="librairieModel.ecr2">
+        <MappingFragment StoreEntitySet="ecr2">
+          <ScalarProperty Name="NUMECR" ColumnName="NUMECR" />
+          <ScalarProperty Name="PRENOMECR" ColumnName="PRENOMECR" />
+          <ScalarProperty Name="NOMECR" ColumnName="NOMECR" />
+          <ScalarProperty Name="PAYSECR" ColumnName="PAYSECR" />
+          <ScalarProperty Name="LANGUECR" ColumnName="LANGUECR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ecr3">
+      <EntityTypeMapping TypeName="librairieModel.ecr3">
+        <MappingFragment StoreEntitySet="ecr3">
+          <ScalarProperty Name="NUMECR" ColumnName="NUMECR" />
+          <ScalarProperty Name="PRENOMECR" ColumnName="PRENOMECR" />
+          <ScalarProperty Name="NOMECR" ColumnName="NOMECR" />
+          <ScalarProperty Name="PAYSECR" ColumnName="PAYSECR" />
+          <ScalarProperty Name="LANGUECR" ColumnName="LANGUECR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ecr8">
+      <EntityTypeMapping TypeName="librairieModel.ecr8">
+        <MappingFragment StoreEntitySet="ecr8">
+          <ScalarProperty Name="NUMECR" ColumnName="NUMECR" />
+          <ScalarProperty Name="PRENOMECR" ColumnName="PRENOMECR" />
+          <ScalarProperty Name="NOMECR" ColumnName="NOMECR" />
+          <ScalarProperty Name="PAYSECR" ColumnName="PAYSECR" />
+          <ScalarProperty Name="LANGUECR" ColumnName="LANGUECR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ecr9">
+      <EntityTypeMapping TypeName="librairieModel.ecr9">
+        <MappingFragment StoreEntitySet="ecr9">
+          <ScalarProperty Name="NUMECR" ColumnName="NUMECR" />
+          <ScalarProperty Name="PRENOMECR" ColumnName="PRENOMECR" />
+          <ScalarProperty Name="NOMECR" ColumnName="NOMECR" />
+          <ScalarProperty Name="PAYSECR" ColumnName="PAYSECR" />
+          <ScalarProperty Name="LANGUECR" ColumnName="LANGUECR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EditeursDeParis">
+      <EntityTypeMapping TypeName="librairieModel.EditeursDeParis">
+        <MappingFragment StoreEntitySet="EditeursDeParis">
+          <ScalarProperty Name="nomed" ColumnName="nomed" />
+          <ScalarProperty Name="teled" ColumnName="teled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="edParis">
+      <EntityTypeMapping TypeName="librairieModel.edParis">
+        <MappingFragment StoreEntitySet="edParis">
+          <ScalarProperty Name="nomed" ColumnName="nomed" />
+          <ScalarProperty Name="teled" ColumnName="teled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParisEditors">
+      <EntityTypeMapping TypeName="librairieModel.ParisEditors">
+        <MappingFragment StoreEntitySet="ParisEditors">
+          <ScalarProperty Name="nomed" ColumnName="nomed" />
+          <ScalarProperty Name="teled" ColumnName="teled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ECRIRE" TypeName="librairieModel.ECRIRE" StoreEntitySet="ECRIRE">
+      <EndProperty Name="ECRIVAIN">
+        <ScalarProperty Name="NUMECR" ColumnName="NUMECR" />
+      </EndProperty>
+      <EndProperty Name="OUVRAGE">
+        <ScalarProperty Name="NUMOUVR" ColumnName="NUMOUVR" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
